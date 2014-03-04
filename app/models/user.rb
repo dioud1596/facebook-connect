@@ -18,9 +18,14 @@ class User < ActiveRecord::Base
     self.authentications.build(
       :provider => omniauth['provider'],
       :token => (omniauth['credentials']['token'] rescue nil),
-      :token_expiry => (omniauth['credentials']['expires_at'].to_i rescue nil)
+      :token_expiry => (omniauth['credentials']['expires_at'] rescue nil)
     )
     
+  end
+  
+  
+  def fb_token
+    authentications.find_by_provider("facebook").token
   end
     
   

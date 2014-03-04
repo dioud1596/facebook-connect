@@ -1,5 +1,41 @@
-<h1>Bienvenue mons gars</h1>
+<h1>Bienvenue mon gars !</h1>
+
 <% unless current_user.has_fb_authentication? %>
   Connect your account with
   <%= link_to "Facebook", "/auth/facebook", class: "btn btn-primary btn-large"%>
+<% else %>
+
+  <h2>Mes infos</h2>
+  <table class="table table-striped">
+    <tr>
+      <th>Email</th>
+      <th>Image</th>
+      <th>Hometown</th>
+      <th>Education</th>
+    </tr>
+    <tr>
+      <td><%= current_user.email %></td>
+      <td><%= image_tag('https://graph.facebook.com/'+ @profile['id'] +'/picture', class: "img img-circle") %></td>
+      <td><%= @profile["hometown"]["name"]%></td>
+      <td>
+        <ul>
+          <% @profile["education"].each do |edu| %>
+            <li><%= edu["school"]["name"] %> | <%= edu["type"]%></li>
+          <% end %>
+        </ul>
+      </td> 
+    </tr>
+  </table>
+  
+  <h2>Mes Potes</h2>
+  <ul>
+  <%= @friends.each do |friend| %>
+    <li>
+      <%= friend["name"]%>
+      <%= image_tag('https://graph.facebook.com/'+ friend['id'] +'/picture', class: "img img-circle") %>
+    </li>
+  <% end %>
+  </ul>
+  
 <% end %>
+

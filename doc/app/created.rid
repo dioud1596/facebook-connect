@@ -1,0 +1,8 @@
+Tue, 04 Mar 2014 14:20:07 +0100
+README.rdoc	Tue, 04 Mar 2014 14:19:53 +0100
+app/controllers/application_controller.rb	Tue, 04 Mar 2014 13:21:15 +0100
+app/controllers/home_controller.rb	Tue, 04 Mar 2014 14:14:10 +0100
+app/controllers/users/omniauth_callbacks_controller.rb	Tue, 04 Mar 2014 13:42:10 +0100
+app/helpers/application_helper.rb	Mon, 03 Mar 2014 13:47:46 +0100
+app/helpers/home_helper.rb	Mon, 03 Mar 2014 14:32:52 +0100
+app/models/user.rb	Tue, 04 Mar 2014 14:10:14 +0100

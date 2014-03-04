@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+
+
+.navbar {
+	height: 80px;
+}
+
+.navbar >.container-fluid .navbar-brand {
+	line-height: 50px;
+}
+
+.navbar-default .navbar-nav>li>a {
+	line-height: 50px;
+}

@@ -36,6 +36,12 @@ end
 
 gem 'devise'
 
+gem 'omniauth-facebook'
+
+gem 'debugger'
+
+gem 'koala'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,2 +1,34 @@
-<h1>Home#welcome</h1>
-<p>Find me in app/views/home/welcome.html.erb</p>
+<% if current_user.provider == "facebook" %>
+  <h2>Mes infos</h2>
+  <table class="table table-striped">
+    <tr>
+      <th>Email</th>
+      <th>Image</th>
+      <th>Hometown</th>
+      <th>Education</th>
+    </tr>
+    <tr>
+      <td><%= current_user.email %></td>
+      <td><%= image_tag('https://graph.facebook.com/'+ @profile['id'] +'/picture', class: "img img-circle") %></td>
+      <td><%= @profile["hometown"]["name"]%></td>
+      <td>
+        <ul>
+          <% @profile["education"].each do |edu| %>
+            <li><%= edu["school"]["name"] %> | <%= edu["type"]%></li>
+          <% end %>
+        </ul>
+      </td> 
+    </tr>
+  </table>
+
+  <h2>Mes Potes</h2>
+  <ul>
+  <%= @friends.each do |friend| %>
+    <li>
+      <%= friend["name"]%>
+      <%= image_tag('https://graph.facebook.com/'+ friend['id'] +'/picture', class: "img img-circle") %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+  

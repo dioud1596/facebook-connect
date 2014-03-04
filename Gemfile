@@ -33,9 +33,15 @@ group :doc do
 end
 
 
+group :development do 
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
 
 gem 'devise'
-
+gem 'omniauth-facebook'
+gem 'koala'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

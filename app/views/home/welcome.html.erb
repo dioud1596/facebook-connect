@@ -1,2 +1,5 @@
-<h1>Home#welcome</h1>
-<p>Find me in app/views/home/welcome.html.erb</p>
+<h1>Bienvenue mons gars</h1>
+<% unless current_user.has_fb_authentication? %>
+  Connect your account with
+  <%= link_to "Facebook", "/auth/facebook", class: "btn btn-primary btn-large"%>
+<% end %>

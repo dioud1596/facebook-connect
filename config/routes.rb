@@ -1,5 +1,8 @@
 FacebookConnect::Application.routes.draw do
-  devise_for :users
+  
+  get 'auth/:provider/callback', to: 'authentications#create'
+  
+  devise_for :users, controllers: {registrations: "registrations"}
   
   root 'home#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
